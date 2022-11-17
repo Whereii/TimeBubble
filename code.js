@@ -24,15 +24,3 @@ let largeBubble = {
 
 const bubble = new bubbleGenerator(largeBubble);
 
-console.log(bubble)
-
-/*
-let bubbleTest = document.createElement('div');
-bubbleTest.style.width = '100px';
-bubbleTest.style.height = '100px';
-bubbleTest.style.position = 'absolute';
-bubbleTest.style.top = '100px';
-bubbleTest.style.backgroundColor = 'black'
-container.appendChild(bubbleTest);
-*/
-console.log(randomPosition);
