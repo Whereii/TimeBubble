@@ -9,7 +9,7 @@ html, body {
 
 
 .background {
-	background: linear-gradient(-45deg, black, rgb(99, 27, 99), rgb(0, 0, 95)) black;
+	background: linear-gradient(-75deg, black, rgb(102, 1, 1), rgb(255, 177, 105), black);
 	background-size: 400% 400%;
 	animation: fade 15s ease infinite;
 	height: 100vh;
