@@ -60,11 +60,13 @@ function memoryImage() {
 }
 
 
+
+
 //Once bubble is clicked, this opens the div container for image
 function openMemory () {
 
+//the container
 let memory = document.createElement('div');
-
 memory.style.width = .8 * getWidth() + 'px';
 memory.style.height = .8 * getHeight() + 'px'
 memory.style.position = 'absolute';
@@ -73,30 +75,32 @@ memory.style.top = '10%';
 memory.style.left = '10%';
 memory.style.display = 'flex';
 memory.style.justifyContent = 'center';
+memory.style.alignItems = 'center';
+memory.style.flexDirection = 'column';
 
+//close button
+let closer = document.createElement('div');
+closer.style.width = '30px';
+closer.style.height = '30px';
+closer.style.borderRadius = '50%';
+closer.style.backgroundColor = 'red';
+closer.style.alignSelf = 'end';
+closer.addEventListener("click", function() {
+    memory.remove();
+})
+memory.appendChild(closer);
+
+
+//the image
 let memImage = document.createElement('img')
 memImage.id = 'imgId';
 memImage.src = memoryImage();
+memImage.style.maxWidth = '90%'
+memImage.style.maxHeight = '90%'
 memory.appendChild(memImage);
 
 
 container.appendChild(memory);
 }
 
-/*
-function openMemory () {
-    let memory = document.createElement('div');
-    memory.style.width = .8 * getWidth() + 'px';
-    memory.style.height = .8 * getHeight() + 'px'
-    memory.style.position = 'absolute';
-    memory.style.backgroundColor = 'black'
-    memory.style.top = '10%';
-    memory.style.left = '10%';
-    memory.style.backgroundImage = 'url(' + memoryImage() + ')';
-    memory.style.backgroundRepeat = 'no-repeat';
-    memory.style.backgroundSize = 'contain';
-    memory.style.backgroundPosition = 'center';
-    container.appendChild(memory);
-    }
-*/
 const bubble = new bubbleGenerator(largeBubble);
