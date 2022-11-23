@@ -33,3 +33,20 @@ html, body {
 }
 
 
+
+@keyframes bubbleFade {
+    0% {
+        opacity: 0%;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 80%;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateY(-20px);
+    }
+}
+
+
