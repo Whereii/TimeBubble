@@ -449,14 +449,15 @@ function openMemory () {
 //the container
 let memory = document.createElement('div');
 memory.style.width = .8 * getWidth() + 'px';
-memory.style.height = .8 * getHeight() + 'px'
+memory.style.height = .8 * getHeight() + 'px';
 memory.style.position = 'absolute';
-memory.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+memory.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 memory.style.display = 'flex';
 memory.style.justifyContent = 'center';
 memory.style.alignItems = 'center';
 memory.style.flexDirection = 'column';
-memory.style.animation = 'popUp .5s ease'
+memory.style.animation = 'popUp .5s ease';
+memory.style.zIndex = 7;
 
 //close button
 let closer = document.createElement('div');
@@ -465,6 +466,7 @@ closer.style.height = '30px';
 closer.style.borderRadius = '50%';
 closer.style.backgroundColor = 'red';
 closer.style.alignSelf = 'end';
+closer.style.zIndex = 9;
 closer.addEventListener("click", function() {
     memory.remove();
 })
