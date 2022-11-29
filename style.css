@@ -50,3 +50,14 @@ html, body {
 }
 
 
+@keyframes introFade {
+    0% {
+        opacity: 0%;
+    }
+    50% {
+        opacity: 80%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}

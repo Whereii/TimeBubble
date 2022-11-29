@@ -1,7 +1,7 @@
 let container = document.querySelector('.background')
 
 function randomPosition() {
-    return Math.floor(Math.random() * 90)
+    return Math.floor(Math.random() * 85)
 }
 
 
@@ -442,6 +442,31 @@ memory.appendChild(memImage);
 
 container.appendChild(memory);
 }
+
+function welcome () {
+  let welcome = document.createElement('div')
+  welcome.style.width = getWidth() + 'px';
+  welcome.style.height = getHeight() / 3 + 'px';
+  welcome.style.zIndex = 10;
+  welcome.style.position = 'absolute';
+  welcome.style.backgroundColor = 'black';
+  welcome.style.fontSize = "25px";
+  welcome.innerHTML = '<h1>Happy Two Years</h1>';
+  welcome.style.color = 'white';
+  welcome.style.display = 'flex';
+  welcome.style.alignItems = 'center';
+  welcome.style.justifyContent = 'center';
+  welcome.style.animation = 'introFade 8s ease'
+  container.appendChild(welcome);
+
+  function removeWelcome() {
+    container.removeChild(welcome);
+  }
+  setTimeout(removeWelcome, 8000)
+}
+
+welcome()
+
 
 function first(){
   bubbleGeneratorOne()
