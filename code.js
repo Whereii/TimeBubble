@@ -27,11 +27,17 @@ function getWidth() {
   }
 
 
+  function randomBubSize (){
+    return Math.floor(Math.random() * 41) + 80
+}
+
+
 //This factory function can be used to create the bubble elements
-function bubbleGeneratorOne(type) {
+function bubbleGeneratorOne() {
+  size = randomBubSize()
   let bubble = document.createElement('div');
-  bubble.style.width = type.width;
-  bubble.style.height = type.height;
+  bubble.style.width = size + 'px';
+  bubble.style.height = size + 'px';
   bubble.style.position = 'absolute';
   bubble.style.top = randomPosition() + '%';
   bubble.style.left = randomPosition() + "%";
@@ -116,10 +122,11 @@ function bubbleGeneratorOne(type) {
         
 }
 
-function bubbleGeneratorTwo(type) {
+function bubbleGeneratorTwo() {
+  size = randomBubSize()
   let bubbleTwo = document.createElement('div');
-  bubbleTwo.style.width = type.width;
-  bubbleTwo.style.height = type.height;
+  bubbleTwo.style.width = size + 'px';
+  bubbleTwo.style.height = size + 'px';
   bubbleTwo.style.position = 'absolute';
   bubbleTwo.style.top = randomPosition() + '%';
   bubbleTwo.style.left = randomPosition() + "%";
@@ -204,10 +211,11 @@ function bubbleGeneratorTwo(type) {
         
 }
 
-function bubbleGeneratorThree(type) {
+function bubbleGeneratorThree() {
+  size = randomBubSize()
   let bubbleThree = document.createElement('div');
-  bubbleThree.style.width = type.width;
-  bubbleThree.style.height = type.height;
+  bubbleThree.style.width = size + 'px';
+  bubbleThree.style.height = size + 'px';
   bubbleThree.style.position = 'absolute';
   bubbleThree.style.top = randomPosition() + '%';
   bubbleThree.style.left = randomPosition() + "%";
@@ -292,10 +300,11 @@ function bubbleGeneratorThree(type) {
         
 }
 
-function bubbleGeneratorFour(type) {
+function bubbleGeneratorFour() {
+  size = randomBubSize();
   let bubbleFour = document.createElement('div');
-  bubbleFour.style.width = type.width;
-  bubbleFour.style.height = type.height;
+  bubbleFour.style.width = size + 'px';
+  bubbleFour.style.height = size + 'px';
   bubbleFour.style.position = 'absolute';
   bubbleFour.style.top = randomPosition() + '%';
   bubbleFour.style.left = randomPosition() + "%";
@@ -381,19 +390,6 @@ function bubbleGeneratorFour(type) {
 }
 
 
-let largeBubble = {
-    name: 'largeBubble',
-    width: '100px',
-    height: '100px'
-}
-
-let mediumBubble = {
-  name: 'mediumBubble',
-  width: '100px',
-  height: '100px'
-}
-
-
 //Picks which image to use randomly for openMemory
 function memoryImage() {
     let pick = Math.floor(Math.random() * 2)
@@ -448,19 +444,19 @@ container.appendChild(memory);
 }
 
 function first(){
-  bubbleGeneratorOne(largeBubble)
+  bubbleGeneratorOne()
 }
 
 function second() {
-  bubbleGeneratorTwo(largeBubble)
+  bubbleGeneratorTwo()
 }
 
 function third() {
-  bubbleGeneratorThree(largeBubble)
+  bubbleGeneratorThree()
 }
 
 function fourth() {
-  bubbleGeneratorFour(largeBubble)
+  bubbleGeneratorFour()
 }
 
 
