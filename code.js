@@ -411,14 +411,29 @@ function bubbleGeneratorFour() {
 
 
 //Picks which image to use randomly for openMemory
+let selection = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+let alreadyPicked = []
 function memoryImage() {
-    let pick = Math.floor(Math.random() * 2)
-    if(pick == 0) {
-        return "./images/IMG_4232.PNG"
-    } else if(pick == 1) {
-        return "./images/IMG_4233.PNG"
+  if(selection.length == 0){
+    for(let i = 0; i < alreadyPicked.length; i++){
+      selection.push(alreadyPicked[i]);
     }
-    console.log(pick)
+    alreadyPicked.splice(0)
+  }
+
+  pick = selection[Math.floor(Math.random() * selection.length)]
+
+  console.log(pick)
+  
+  
+  index = selection.indexOf(pick)
+
+  selection.splice(index, 1)
+  alreadyPicked.push(pick)
+
+  console.log(selection)
+  console.log(alreadyPicked)
+  return './images/' + pick + '.PNG'
 }
 
 
