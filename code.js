@@ -44,7 +44,8 @@ function bubbleGeneratorOne() {
   bubble.style.borderRadius = "50%";
   bubble.style.boxShadow = 'inset 0 0 35px rgba(255, 255, 255, 0.25)'
   container.appendChild(bubble);
-  bubble.addEventListener("click", openMemory);
+  bubble.addEventListener("click", delayMem);
+  bubble.addEventListener("click", popRemove);
 
   let reflect = document.createElement('span')
   reflect.style.position = 'absolute';
@@ -118,6 +119,10 @@ function bubbleGeneratorOne() {
     container.removeChild(bubble)
   }
 
+  function popRemove() {
+    setTimeout(removeBub, 500)
+  }
+
   setTimeout(removeBub, 9000);
         
 }
@@ -134,7 +139,8 @@ function bubbleGeneratorTwo() {
   bubbleTwo.style.borderRadius = "50%";
   bubbleTwo.style.boxShadow = 'inset 0 0 35px rgba(255, 255, 255, 0.25)'
   container.appendChild(bubbleTwo);
-  bubbleTwo.addEventListener("click", openMemory);
+  bubbleTwo.addEventListener("click", delayMem);
+  bubbleTwo.addEventListener("click", popRemove);
 
   let reflect = document.createElement('span')
   reflect.style.position = 'absolute';
@@ -207,6 +213,10 @@ function bubbleGeneratorTwo() {
     container.removeChild(bubbleTwo)
   }
 
+  function popRemove() {
+    setTimeout(removeBub, 500)
+  }
+
   setTimeout(removeBub, 7000);
         
 }
@@ -223,7 +233,8 @@ function bubbleGeneratorThree() {
   bubbleThree.style.borderRadius = "50%";
   bubbleThree.style.boxShadow = 'inset 0 0 35px rgba(255, 255, 255, 0.25)'
   container.appendChild(bubbleThree);
-  bubbleThree.addEventListener("click", openMemory);
+  bubbleThree.addEventListener("click", delayMem);
+  bubbleThree.addEventListener("click", popRemove);
 
   let reflect = document.createElement('span')
   reflect.style.position = 'absolute';
@@ -296,6 +307,10 @@ function bubbleGeneratorThree() {
     container.removeChild(bubbleThree)
   }
 
+  function popRemove() {
+    setTimeout(removeBub, 500)
+  }
+
   setTimeout(removeBub, 4000);
         
 }
@@ -312,7 +327,8 @@ function bubbleGeneratorFour() {
   bubbleFour.style.borderRadius = "50%";
   bubbleFour.style.boxShadow = 'inset 0 0 35px rgba(255, 255, 255, 0.25)'
   container.appendChild(bubbleFour);
-  bubbleFour.addEventListener("click", openMemory);
+  bubbleFour.addEventListener("click", delayMem);
+  bubbleFour.addEventListener("click", popRemove);
 
   let reflect = document.createElement('span')
   reflect.style.position = 'absolute';
@@ -385,6 +401,10 @@ function bubbleGeneratorFour() {
     container.removeChild(bubbleFour)
   }
 
+  function popRemove() {
+    setTimeout(removeBub, 500)
+  }
+
   setTimeout(removeBub, 5000);
         
 }
@@ -402,7 +422,11 @@ function memoryImage() {
 }
 
 
-
+//Set the delay for the pop animation
+function delayMem(){
+  setTimeout(openMemory, 500)
+  this.style.animation = 'pop .5s ease'
+}
 
 //Once bubble is clicked, this opens the div container for image
 function openMemory () {
@@ -417,6 +441,7 @@ memory.style.display = 'flex';
 memory.style.justifyContent = 'center';
 memory.style.alignItems = 'center';
 memory.style.flexDirection = 'column';
+memory.style.animation = 'popUp .5s ease'
 
 //close button
 let closer = document.createElement('div');

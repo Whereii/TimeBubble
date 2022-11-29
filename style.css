@@ -61,3 +61,24 @@ html, body {
         opacity: 0%;
     }
 }
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
