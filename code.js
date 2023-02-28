@@ -5,7 +5,7 @@ function randomPosition() {
 }
 
 
-//Used to find width and height of browser window for sizing purposes
+//Used to find width and height of browser window for sizing purposes 
 function getWidth() {
     return Math.max(
       document.body.scrollWidth,
